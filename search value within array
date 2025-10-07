@@ -1,0 +1,7 @@
+#include <stdio.h>
+int main(void){
+    int a[6] = {10,20,30,40,50,60}, n=6, key=30, i;
+    for(i=0;i<n;i++) if(a[i]==key) break;
+    if(i<n) printf("Found at index %d\n", i); else printf("Not found\n");
+    return 0;
+}
