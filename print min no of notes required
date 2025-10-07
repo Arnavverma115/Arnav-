@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main(void){
+    int notes[] = {500,200,100,50,20,10,5,2,1};
+    int n = sizeof(notes)/sizeof(notes[0]);
+    int amt, i;
+    printf("Enter amount: "); scanf("%d",&amt);
+    for(i=0;i<n;i++){
+        int c = amt / notes[i];
+        if(c){
+            printf("%d x %d\n", notes[i], c);
+            amt -= c * notes[i];
+        }
+    }
+    return 0;
+}
