@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(void){
+    int src[5] = {1,2,3,4,5};
+    int dest[10] = {0};
+    // copy src into dest starting at index 1 (skip index 0)
+    for(int i=0;i<5;i++) dest[i+1] = src[i];
+    printf("Dest: ");
+    for(int i=0;i<10;i++) printf("%d ", dest[i]);
+    printf("\n");
+    return 0;
+}
