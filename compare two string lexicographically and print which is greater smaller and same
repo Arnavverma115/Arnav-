@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <string.h>
+int main(void){
+    char a[200], b[200];
+    fgets(a,sizeof a,stdin); fgets(b,sizeof b,stdin);
+    a[strcspn(a,"\n")]=0; b[strcspn(b,"\n")]=0;
+    int r = strcmp(a,b);
+    if(r==0) puts("Same");
+    else if(r<0) puts("First is smaller");
+    else puts("First is greater");
+    return 0;
+}
