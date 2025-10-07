@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+void shift_left(int a[], int n, int k, int size){
+    for(int i=0;i<size;i++){
+        if(i+k < size) a[i] = a[i+k];
+        else a[i] = 0;
+    }
+}
+void shift_right(int a[], int n, int k, int size){
+    for(int i=size-1;i>=0;i--){
+        if(i-k >= 0) a[i] = a[i-k];
+        else a[i] = 0;
+    }
+}
+int main(void){
+    int a[10], i, k;
+    char dir;
+    printf("Enter 10 integers:\n");
+    for(i=0;i<10;i++) scanf("%d",&a[i]);
+    printf("Enter shift count k: "); scanf("%d",&k);
+    printf("Left or Right (L/R)? "); scanf(" %c",&dir);
+    if(dir=='L' || dir=='l') shift_left(a,10,k,10);
+    else shift_right(a,10,k,10);
+    printf("Result: ");
+    for(i=0;i<10;i++) printf("%d ",a[i]);
+    printf("\n");
+    return 0;
+}
