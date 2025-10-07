@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(void){
+    int a[20] = {1,2,3,4,5}, n=5, pos=3, val=99;
+    // pos is 0-based insert index
+    if(pos<0 || pos>n) { printf("Invalid pos\n"); return 0; }
+    for(int i=n;i>pos;i--) a[i]=a[i-1];
+    a[pos]=val; n++;
+    for(int i=0;i<n;i++) printf("%d ",a[i]);
+    printf("\n");
+    return 0;
+}
